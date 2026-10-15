@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rapid Lounge Voi | Restaurant, bar, lounge and rooms</title>
+<meta name="description" content="Rapid Lounge in Voi: cocktails, shisha, live DJs, a kitchen open 24 hours and rooms on site.">
+<meta name="theme-color" content="#0f0820">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f0820; --panel:#1b1036; --line:#35235f;
+  --violet:#7a3cff; --magenta:#ff3da6; --orange:#f08a3c;
+  --text:#f3ecff; --muted:#bdaedd;
+  --display:"Bricolage Grotesque","Arial Black",Impact,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--ink);color:var(--text);font:400 1.0625rem/1.6 var(--body);-webkit-text-size-adjust:100%}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);line-height:1.02;letter-spacing:-.02em}
+h2{font-size:clamp(2rem,6vw,3.25rem);font-weight:800;margin-bottom:1rem}
+p{max-width:62ch}
+.muted{color:var(--muted)}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(15,8,32,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:1rem}
+.brand{font-family:var(--display);font-weight:800;font-size:1.15rem;text-decoration:none;letter-spacing:-.01em}
+.brand b{color:var(--orange)}
+nav{display:none;gap:1.5rem;font-weight:500}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--text)}
+@media(min-width:760px){nav{display:flex}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 1.4rem;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid transparent}
+.btn-main{background:var(--magenta);color:#1a0612}
+.btn-main:hover{background:#ff62b8}
+.btn-ghost{border-color:var(--line);color:var(--text)}
+.btn-ghost:hover{border-color:var(--violet)}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+
+/* hero */
+.hero{padding:2.5rem 0 3.5rem;background:
+  radial-gradient(60% 50% at 85% 20%,rgba(122,60,255,.45),transparent 70%),
+  radial-gradient(50% 40% at 10% 90%,rgba(255,61,166,.25),transparent 70%)}
+.hero .wrap{display:grid;gap:2.5rem;align-items:center}
+.hero h1{font-size:clamp(3.2rem,13vw,7rem);font-weight:800;margin-bottom:1.25rem}
+.hero h1 span{display:block;color:var(--magenta)}
+.hero p{font-size:1.15rem}
+.rating{display:inline-block;margin-top:1.25rem;color:var(--muted);font-size:.95rem}
+.rating strong{color:var(--text)}
+.phone{justify-self:center;width:min(300px,78vw);aspect-ratio:9/16;border-radius:34px;padding:8px;background:linear-gradient(160deg,var(--violet),var(--magenta));box-shadow:0 30px 80px rgba(122,60,255,.45)}
+.phone video{width:100%;height:100%;object-fit:cover;border-radius:27px;background:#000}
+@media(min-width:860px){
+  .hero{padding:4rem 0 5rem}
+  .hero .wrap{grid-template-columns:1.25fr .75fr}
+  .phone{width:320px}
+}
+
+/* sections */
+section{padding:4rem 0}
+.alt{background:var(--panel)}
+
+/* events */
+.week{list-style:none;padding:0;margin-top:1.5rem;border-top:1px solid var(--line)}
+.week li{display:grid;grid-template-columns:7.5rem 1fr;gap:1rem;padding:1.1rem .5rem;border-bottom:1px solid var(--line);align-items:baseline}
+.week .day{font-family:var(--display);font-weight:700;font-size:1.35rem}
+.week .what{color:var(--muted)}
+.week .what b{color:var(--text);font-weight:600}
+.week li.today{background:linear-gradient(90deg,rgba(255,61,166,.18),transparent);border-left:4px solid var(--magenta);padding-left:1rem}
+.week li.today .day::after{content:" tonight";font:600 .8rem var(--body);color:var(--magenta);margin-left:.4rem}
+@media(max-width:480px){.week li{grid-template-columns:5.5rem 1fr}.week .day{font-size:1.1rem}}
+
+/* two-column blocks */
+.cols{display:grid;gap:2rem}
+@media(min-width:860px){.cols{grid-template-columns:1fr 1fr;gap:4rem}}
+.facts{list-style:none;padding:0;display:grid;gap:.9rem}
+.facts li{padding-left:1.1rem;border-left:3px solid var(--violet)}
+.facts b{display:block;font-family:var(--display);font-size:1.2rem}
+
+.eat-grid{display:grid;gap:2rem;align-items:center;margin-top:1.5rem}
+@media(min-width:860px){.eat-grid{grid-template-columns:320px 1fr;gap:4rem}}
+
+/* visit */
+.visit dl{display:grid;gap:1.25rem;margin-top:1.5rem}
+.visit dt{font-family:var(--display);font-weight:700;font-size:1.15rem}
+.visit dd{color:var(--muted)}
+.todo{background:rgba(240,138,60,.16);color:var(--orange);padding:.05rem .4rem;border-radius:4px}
+
+footer{padding:2rem 0 3rem;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">Rapid<b>Lounge</b> Voi</a>
+    <nav aria-label="Main">
+      <a href="#events">This week</a>
+      <a href="#eat">Eat and drink</a>
+      <a href="#stay">Stay</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="btn btn-main" href="#visit" style="min-height:40px;padding:0 1.1rem">Find us</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Sherehe<span>lazima.</span></h1>
+        <p>Cocktails, shisha and live DJs in the heart of Voi, with a kitchen that never closes and rooms on site when the night runs long.</p>
+        <div class="actions">
+          <!-- TODO: replace 254700000000 with the lounge's WhatsApp number (country code, no + or spaces) -->
+          <a class="btn btn-main" id="wa" href="https://wa.me/254700000000">Book a table on WhatsApp</a>
+          <a class="btn btn-ghost" href="#events">See this week</a>
+        </div>
+        <a class="rating" href="https://www.google.com/search?q=Rapid+Lounge+Voi" rel="noopener"><strong>4.3 out of 5</strong> from 81 Google reviews</a>
+      </div>
+      <div class="phone">
+        <video id="tour" autoplay muted loop playsinline preload="metadata" poster="assets/poster.jpg" aria-label="Walk-through of the Rapid Lounge entrance and interior">
+          <source src="assets/tour.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <section id="events" class="alt">
+    <div class="wrap">
+      <h2>Every week at Rapid</h2>
+      <p class="muted">Something is on from Wednesday to Sunday. Walk in or message us to hold a table.</p>
+      <ul class="week" id="week">
+        <li data-d="3"><span class="day">Wednesday</span><span class="what"><b>Karaoke night</b> Pick a song and take the mic.</span></li>
+        <li data-d="4"><span class="day">Thursday</span><span class="what"><b>Party night</b> Guest DJs on the decks.</span></li>
+        <li data-d="5"><span class="day">Friday</span><span class="what"><b>Friday DJ sessions</b> The weekend starts here.</span></li>
+        <li data-d="6"><span class="day">Saturday</span><span class="what"><b>Saturday Night Live</b> The biggest night of the week.</span></li>
+        <li data-d="0"><span class="day">Sunday</span><span class="what"><b>Brunch and EPL</b> Watch the matches on the big screens.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="eat">
+    <div class="wrap">
+      <h2>Eat and drink</h2>
+      <div class="eat-grid">
+        <div class="phone">
+          <video controls playsinline preload="none" poster="assets/night-poster.jpg" aria-label="A night at Rapid Lounge: the outdoor area, the bar and the crowd">
+            <source src="assets/night.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div>
+          <p>Order from the kitchen at any hour, then move on to cocktails or shisha on the outdoor seating. Most guests spend between Ksh 1,000 and 3,500.</p>
+          <ul class="facts" style="margin-top:1.75rem">
+            <li><b>Kitchen open 24 hours</b>Food whenever you get hungry.</li>
+            <li><b>Cocktails and bar</b>Cocktails and other drinks from the bar.</li>
+            <li><b>Shisha</b>Served at your table.</li>
+            <li><b>Outdoor seating</b>Open air under the Voi sky.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stay" class="alt">
+    <div class="wrap cols">
+      <div>
+        <h2>Stay the night</h2>
+        <p>Rapid Lounge has accommodation on site, so you can go from the dance floor to your room without a late ride home.</p>
+      </div>
+      <p class="muted"><span class="todo">TODO</span> Add room types and nightly rates here, plus a photo of a room.</p>
+    </div>
+  </section>
+
+  <section id="visit" class="visit">
+    <div class="wrap">
+      <h2>Come through</h2>
+      <p class="muted">Look for the RL sign and the grey patterned gate.</p>
+      <dl>
+        <div><dt>Where</dt><dd>Voi, Taita-Taveta County. <span class="todo">TODO</span> add street or landmark.</dd></div>
+        <div><dt>Hours</dt><dd>Open late, kitchen 24 hours. <span class="todo">TODO</span> confirm daily opening times.</dd></div>
+        <div><dt>Call</dt><dd><span class="todo">TODO</span> add phone number</dd></div>
+      </dl>
+      <div class="actions">
+        <a class="btn btn-main" href="https://www.google.com/maps/search/?api=1&query=Rapid+Lounge+Voi" rel="noopener">Get directions</a>
+        <a class="btn btn-ghost" id="wa2" href="https://wa.me/254700000000">WhatsApp us</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; Rapid Lounge Voi</span>
+    <span>Please drink responsibly.</span>
+  </div>
+</footer>
+
+<script>
+// Highlight today's event
+(function(){
+  var d = new Date().getDay();
+  var li = document.querySelector('#week li[data-d="'+d+'"]');
+  if (li) li.classList.add('today');
+})();
+// Respect reduced-motion: show a still frame with play controls
+(function(){
+  var v = document.getElementById('tour');
+  if (v && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    v.removeAttribute('autoplay'); v.pause(); v.setAttribute('controls','');
+  }
+})();
+</script>
+</body>
+</html>
